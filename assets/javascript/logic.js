@@ -98,14 +98,17 @@ var config = {
     // Next Train
     var nextTrain = moment().add(tMinutesTillTrain, "minutes");
     console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));  
+    //var nextTrainTime = moment(nextTrain).format("hh:mm");
+    var nextTrainTime = moment().add(tMinutesTillTrain, "minutes").format("hh:mm A"); 
+    
     
   
     // Create the new row
     var newRow = $("<tr>").append(
       $("<td>").text(trainName),
       $("<td>").text(destination),
-      $("<td>").text(first_time),
-      $("<td>").text(nextTrain),
+      $("<td>").text(frequency),
+      $("<td>").text(nextTrainTime),
       $("<td>").text(tMinutesTillTrain)
     );
   
