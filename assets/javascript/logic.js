@@ -3,8 +3,7 @@
 // 1. Initialize Firebase
 // 2. Create button for adding new trains - then update the html + update the database
 // 3. Create a way to retrieve trains from the train database.
-
-
+// 4. Calculation time of the next train time
 
 // 1. Initialize Firebase
 var config = {
@@ -73,7 +72,7 @@ var config = {
     console.log(first_time);
     console.log(frequency);
 
-    //Time Calculation
+    // 4. Time Calculation
     
     console.log(first_time);
     var first_timeConverted = moment(first_time, "HH:mm").subtract(1, "years");
@@ -99,9 +98,7 @@ var config = {
     var nextTrain = moment().add(tMinutesTillTrain, "minutes");
     console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));  
     //var nextTrainTime = moment(nextTrain).format("hh:mm");
-    var nextTrainTime = moment().add(tMinutesTillTrain, "minutes").format("hh:mm A"); 
-    
-    
+    var nextTrainTime = moment().add(tMinutesTillTrain, "minutes").format("hh:mm A");     
   
     // Create the new row
     var newRow = $("<tr>").append(
